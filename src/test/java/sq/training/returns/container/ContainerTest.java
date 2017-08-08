@@ -17,13 +17,25 @@ public class ContainerTest {
 
     @Test
     public void verifyBasicConstructorNotEmpty(){
-        Container x1 = new Container("Round", false);
-        Assert.assertEquals("Round", x1.getShape());
+        Container x1 = new Container("round", false);
+        Assert.assertEquals("round", x1.getShape());
         Assert.assertFalse(x1.isEmpty());
     }
 
-    @Test(expected = java.lang.IllegalArgumentException.class)
+    @Test
+    public void verifyBasicConstructorSpaces(){
+        Container x1 = new Container(" round ", false);
+        Assert.assertEquals("round", x1.getShape());
+        Assert.assertFalse(x1.isEmpty());
+    }
+
+    @Test(expected = java.lang.IllegalArgumentException.class) //Null Shape
     public void verifyBasicConstructor(){
         Container x1 = new Container(null, false);
+    }
+
+    @Test(expected = java.lang.IllegalArgumentException.class) //Null Shape
+    public void verifyBasicConstructorEmptyString(){
+        Container x1 = new Container("", false);
     }
 }
