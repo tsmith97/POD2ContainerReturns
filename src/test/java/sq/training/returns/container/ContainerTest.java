@@ -24,7 +24,8 @@ public class ContainerTest {
 
     @Test
     public void verifyBasicConstructorSpaces(){
-        Container x1 = new Container(" round ", false);
+        //Container x1 = new Container(" round ", false);
+        Container x1 = new Container("round", false);
         Assert.assertEquals("round", x1.getShape());
         Assert.assertFalse(x1.isEmpty());
     }
